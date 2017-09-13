@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/OptionsApp.css"/>
+    </head>
+    <body>
+        <div class='app-container'></div>
+
+        <script src='js/ext/jquery-1.12.1.min.js'></script>
+        <script src='js/ext/underscore-min.js'></script>
+        <script src='js/ext/backbone-min.js'></script>
+
+        <script src='js/TemplateView.js'></script>
+        <script src='js/OptionsApp.js'></script>
+        <script src='js/GrantEntryView.js'></script>
+        <script src='js/ExitView.js'></script>
+        <script src='js/Models.js'></script>
+
+        <!-- templates -->
+
+        <script type='text/template' id='options-app-template'>
+            <header>Option Grant Calculator</header>
+            <div class='app-body'>
+                <div class='grants'></div>
+                <div class='exit'></div>
+            </div>
+        </script>
+
+        <script type='text/template' id='grant-entry-view-template'>
+            <div class='section-title'>Your grant</div>
+            <div class='inputs'>
+                <span>Shares granted</span><input class='grant-shares' type='number' autofocus>
+                <span>Total outstanding</span><input class='outstanding-shares' type='number'>
+                <span>Strike price</span><input class='strike-price' type='number'>
+                <span>Date</span>
+                <select class='grant-date-month'></select>
+                <select class='grant-date-year'></select>
+            </div>
+        </script>
+
+        <script type='text/template' id='exit-view-template'>
+            <div class='section-title'>Company exit</div>
+            <div class='inputs'>
+                <span>Exit value</span><input class='exit-valuation' type='number'>
+                <span>Date</span>
+                <select class='exit-date-month'></select>
+                <select class='exit-date-year'></select>
+            </div>
+            <div class='results'>
+                <div class='section-title'>RESULT</div>
+                <div class='details'>
+                    <div>Net gain: <span class='net-gain-amount'></span></div>
+                    <div>Annualized: <span class='annualized-gain-amount'></span></div>
+                </div>
+            </div>
+        </script>
+
+        <!-- end templates -->
+
+        <script>
+            var app = new OptionsApp({
+                $container: $('.app-container')
+            });
+        </script>
+    </body>
+</html>
