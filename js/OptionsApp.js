@@ -6,18 +6,24 @@ var OptionsApp = TemplateView.extend({
     initialize: function(args) {
         TemplateView.prototype.initialize.call(this, args);
 
-        this.__grantCollection = new Backbone.Collection([new GrantModel()], {model: GrantModel});
-        this.__exitModel = new ExitModel();
-
-        this.__grantEntryView = new GrantEntryView({
-            grantModel: this.__grantCollection.at(0),
+        this.__grantCollection = new GrantCollection();
+        this.__grantList = new GrantList({
+            grantCollection: this.__grantCollection,
             $container: this.$('.grants')
         });
 
+        this.__addBlankGrant();
+        this.__grantCollection.on('change:persisted', this.__addBlankGrant.bind(this));
+
+        this.__exitModel = new ExitModel();
         this.__exitView = new ExitView({
             grantCollection: this.__grantCollection,
             exitModel: this.__exitModel,
             $container: this.$('.exit')
         });
+    },
+
+    __addBlankGrant: function() {
+        this.__grantCollection.add(new GrantModel());
     },
 });

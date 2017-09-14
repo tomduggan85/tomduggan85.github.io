@@ -12,7 +12,8 @@
 
         <script src='js/TemplateView.js'></script>
         <script src='js/OptionsApp.js'></script>
-        <script src='js/GrantEntryView.js'></script>
+        <script src='js/GrantList.js'></script>
+        <script src='js/GrantView.js'></script>
         <script src='js/ExitView.js'></script>
         <script src='js/Models.js'></script>
 
@@ -26,8 +27,12 @@
             </div>
         </script>
 
-        <script type='text/template' id='grant-entry-view-template'>
-            <div class='section-title'>Your grant</div>
+        <script type='text/template' id='grant-list-template'>
+            <div class='section-title'>Your grants</div>
+            <div class='list'></div>
+        </script>
+
+        <script type='text/template' id='grant-view-template'>
             <div class='inputs'>
                 <span>Shares granted</span><input class='grant-shares' type='number' autofocus>
                 <span>Total outstanding</span><input class='outstanding-shares' type='number'>
@@ -35,6 +40,14 @@
                 <span>Date</span>
                 <select class='grant-date-month'></select>
                 <select class='grant-date-year'></select>
+                <div class='save-for-later'>Save for later</div>
+            </div>
+            <div class='saved-data'>
+                Granted: <span class='field grant_shares'></span>
+                Outstanding: <span class='field outstanding_shares'></span>
+                Strike price: <span class='field strike_price'></span>
+                Date: <span class='field'><span class='month'></span> / <span class='year'></span></span>
+                <span class='delete-grant'>X</span>
             </div>
         </script>
 
@@ -51,6 +64,8 @@
                 <div class='details'>
                     <div>Net gain: <span class='net-gain-amount'></span></div>
                     <div>Annualized: <span class='annualized-gain-amount'></span></div>
+                    <div>Time period: <span class='time-period'></span></div>
+                    <div>Outstanding shares: <span class='outstanding-shares'></span></div>
                 </div>
             </div>
         </script>

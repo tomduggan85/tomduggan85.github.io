@@ -2,8 +2,15 @@
 var TemplateView = Backbone.View.extend({
 
     initialize: function(args) {
-        this.$el.html(_.template($('#' + this.templateId).html()));
-        this.$el.appendTo(args.$container);
+        if (this.templateId) {
+            this.$el.html(_.template($('#' + this.templateId).html()));
+        }
+
+        if (args.prepend) {
+            this.$el.prependTo(args.$container);
+        } else {
+            this.$el.appendTo(args.$container);
+        }
     },
 
     __wireModelToInputs: function(model, fields) {
@@ -16,14 +23,16 @@ var TemplateView = Backbone.View.extend({
                 model.set(update);
             }.bind(this, $input);
 
-            setModelAttr();
+            if ($input.val()) {
+                setModelAttr();
+            }
             this.$(field.selector).on('input', setModelAttr);
         }.bind(this));
     },
 
     __addSelectRange: function(args) {
         var $select = this.$(args.selector);
-        for (var i = args.min; i < args.max; i++) {
+        for (var i = args.min; i <= args.max; i++) {
             var value = args.reverse ? (args.max- i + args.min) : i;
             $select.append("<option value=" + value + ">" + value + "</option>");
         }

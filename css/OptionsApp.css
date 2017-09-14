@@ -70,7 +70,7 @@ input[type=number]:focus {
 
 .exit-view .results {
     margin-top: 30px;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .exit-view .results .section-title {
@@ -99,3 +99,58 @@ input[type=number]:focus {
     display: none;
 }
 
+.grant-view .saved-data {
+    padding: 5px 0;
+}
+
+.grant-view:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.grant-view .save-for-later {
+    cursor: pointer;
+    border: 1px solid #eee;
+    width: 80px;
+    margin: 5px 0;
+    padding: 2px 8px;
+    font-size: 10px;
+}
+
+.grant-view:not(.valid) .save-for-later {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.grant-view .save-for-later:hover {
+    background-color: #eee;
+}
+
+.grant-view .inputs {
+    display: none;
+}
+
+.grant-view.editing .inputs {
+    display: block;
+}
+
+.grant-view.editing .saved-data {
+    display: none;
+}
+
+.grant-view .saved-data {
+    font-size: 10px;
+}
+
+.grant-view .saved-data .field {
+    font-weight: bold;
+    display: inline-block; 
+    width: 80px;
+}
+
+.grant-view .saved-data .delete-grant {
+    float: right;
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
