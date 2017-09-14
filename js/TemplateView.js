@@ -26,7 +26,7 @@ var TemplateView = Backbone.View.extend({
             if ($input.val()) {
                 setModelAttr();
             }
-            this.$(field.selector).on('input', setModelAttr);
+            this.$(field.selector).on('input change', setModelAttr);
         }.bind(this));
     },
 

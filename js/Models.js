@@ -28,7 +28,6 @@ var GrantCollection = Backbone.Collection.extend({
         var localstoreValue = window.localStorage.getItem('OptionsApp.persistedGrants');
         if (localstoreValue) {
             _.each(JSON.parse(localstoreValue), function(grantAttrs) {
-
                 this.add(new GrantModel(grantAttrs));
             }.bind(this));
         }

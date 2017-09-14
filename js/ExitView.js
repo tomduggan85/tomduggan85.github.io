@@ -58,7 +58,7 @@ var ExitView = TemplateView.extend({
 
             var earliestGrant = this.__grantCollection.min(this.__monthCount.bind(this));
 
-            var monthsOfService = Math.max(this.__monthCount(this.__exitModel) - this.__monthCount(earliestGrant));
+            var monthsOfService = Math.max(0, this.__monthCount(this.__exitModel) - this.__monthCount(earliestGrant));
             var annualizedIncome = netIncome / monthsOfService * 12;
 
             this.$('.net-gain-amount').text('$' + netIncome.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}));
@@ -78,7 +78,7 @@ var ExitView = TemplateView.extend({
         var months = monthsOfService % 12;
         var timePeriod = [];
         if (years > 0) {
-            timePeriod.push(years + (years === 1 ? ' year' : 'years'));
+            timePeriod.push(years + (years === 1 ? ' year' : ' years'));
         } if (months > 0) {
             timePeriod.push(months + (months === 1 ? ' month' : ' months'));
         }

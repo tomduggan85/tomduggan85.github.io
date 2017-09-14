@@ -16,14 +16,14 @@ var GrantView = TemplateView.extend({
             selector: 'select.grant-date-month',
             min: 1,
             max: 12,
-            initialValue: now.getMonth() + 1
+            initialValue: this.__grantModel.get('persisted') ? this.__grantModel.get('month') : now.getMonth() + 1
         });
 
         this.__addSelectRange({
             selector: 'select.grant-date-year',
             min: 2000,
             max: 2030,
-            initialValue: now.getFullYear(),
+            initialValue: this.__grantModel.get('persisted') ? this.__grantModel.get('year') : now.getFullYear(),
             reverse: true
         });
 
