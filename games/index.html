@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Projects</title>
+    <style>
+
+      @font-face {
+        font-family: 'NineteenNinetySeven';
+        src: url(./fonts/NineteenNinetySeven.otf) format('opentype');
+      }
+
+      @font-face {
+        font-family: 'PixelEmulator';
+        src: url(./fonts/PixelEmulator.otf) format('opentype');
+      }
+
+      @font-face {
+        font-family: 'EXEPixelPerfect';
+        src: url(./fonts/EXEPixelPerfect.ttf) format('truetype');
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        background: #222;
+        padding: 20px 40px;
+        color: #fff;
+      }
+
+      body a {
+        color: #eee;
+      }
+
+      .game {
+        margin: 40px 0 130px;
+        width: 100%;
+      }
+
+      .game h2 {
+        font-family: 'PixelEmulator', sans-serif;
+        font-size: 50px;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+      }
+
+      .game .images {
+        display: flex;
+        width: 100%;
+      }
+
+      .game img.main-game-image {
+        width: 900px;
+        height: 600px;
+        object-fit: contain;
+        background: #000;
+        margin-right: 10px;
+      }
+
+      .game .additional-images {
+        font-size: 0px;
+      }
+
+      .game .additional-images img {
+        display: block;
+        width: 150px;
+        height: 80px;
+        object-fit: cover;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+
+      .game .caption {
+        margin-top: 3px;
+        font-size: 13px;
+        color: #aaa;
+      }
+
+      .game p {
+        color: #dedede;
+      }
+
+      .game .button {
+        padding: 15px 0;
+        width: 180px;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        margin: 25px 5px 0 0;
+        font-size: 32px;
+        font-family: 'EXEPixelPerfect', sans-serif;
+      }
+
+      .game .button:hover {
+        opacity: 0.8;
+      }
+
+      .game .button.play {
+        background: #fff;
+        color: #111;
+      }
+
+      .game .button.github {
+        box-shadow: inset 0px 0px 0px 3px #fff;
+      }
+
+      @media screen and (max-width: 1105px) {
+        .game .images {
+          flex-direction: column;
+        }
+
+        .game img.main-game-image {
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 8px;
+        }
+
+        .game .additional-images img {
+          display: inline-block;
+          max-width: 33%;
+          width: 100px;
+          margin-right: 5px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          padding: 30px 20px;
+        }
+
+        .game h2 {
+          font-size: 35px;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    Here are some of my recent game experiments.
+    Contact me at <a href='mailto:tomduggan85@gmail.com'>tomduggan85@gmail.com</a>
+    <div class='game'>
+      <h2>Vominate</h2>
+      <div class='images'>
+        <img class='main-game-image' src='images/vominate6.png' />
+        <div class='additional-images'>
+          <img src='images/vominate6.png' />
+          <img src='images/vominate2.gif' />
+          <img src='images/vominate3.png' />
+          <img src='images/vominate1.gif' />
+          <img src='images/vominate4.png' />
+          <img src='images/vominate5.png' />
+          <img src='images/vominate7.png' />
+        </div>
+      </div>
+      <div class='caption'>Javascript, Three.js, React, Mobx (2019)</div>
+      <p>
+        DOOM, in the browser, in a procedurally-generated infinite level.
+        <br/>
+        <a class='button play' target='_blank' href='https://adoring-minsky-ddb179.netlify.com/'>Play</a>
+        <a class='button github' target='_blank' href='https://github.com/tomduggan85/fps-engine'>Github</a>
+      </p>
+    </div>
+    <div class='game'>
+      <h2>Rumble in the Midwest</h2>
+      <div class='images'>
+        <img class='main-game-image' src='images/rumble5.png' />
+        <div class='additional-images'>
+          <img src='images/rumble5.png' />
+          <img src='images/rumble1.gif' />
+          <img src='images/rumble3.png' />
+          <img src='images/rumble2.gif' />
+          <img src='images/rumble4.png' />
+        </div>
+      </div>
+      <div class='caption'>Unity (2020)</div>
+      <p>
+        An isometric demolition derby.
+        <br/><br/>
+        (in development)
+      </p>
+    </div>
+    <div class='game'>
+      <h2>TMNT</h2>
+      <div class='images'>
+        <img class='main-game-image' src='images/tmnt3.png' />
+        <div class='additional-images'>
+          <img src='images/tmnt3.png' />
+          <img src='images/tmnt2.png' />
+          <img src='images/tmnt1.gif' />
+        </div>
+      </div>
+      <div class='caption'>Javascript, React, Mobx (2019)</div>
+      <p>
+        The first level of the NES Turtles II game in the browser.
+        <br/>
+        <a class='button play' href='https://eager-kalam-f1e3b0.netlify.com/'>Play</a>
+        <a class='button github' target='_blank' href='https://github.com/tomduggan85/side-scroller'>Github</a>
+      </p>
+    </div>
+    <div class='game'>
+      <h2>American Demolition 64</h2>
+      <div class='images'>
+        <img class='main-game-image' src='images/ad641.png' />
+        <div class='additional-images'>
+          <img src='images/ad641.png' />
+          <img src='images/ad643.png' />
+          <img src='images/ad642.png' />
+          <img src='images/ad644.png' />
+          <img src='images/ad645.png' />
+        </div>
+      </div>
+      <div class='caption'>Javascript, Three.js, React, Redux (2019)</div>
+      <p>
+        Unfinished two-player demolition derby in the browser with deformable cars.
+        <br/>
+        <a class='button play' href='https://mystifying-hamilton-7db1bd.netlify.com/'>Play</a>
+        <a class='button github' target='_blank' href='https://github.com/tomduggan85/drive'>Github</a>
+      </p>
+    </div>    
+  </body>
+  <script type='text/javascript'>
+    document.querySelectorAll('.additional-images img').forEach( function( imageEl ) {
+      var associatedMainImage = imageEl.closest('.game').querySelector('.main-game-image');
+      imageEl.addEventListener('click', function() {
+        associatedMainImage.src = imageEl.src;
+      })
+    })
+  </script>
+</html>
