@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Game Projects</title>
     <style>
       @font-face {
@@ -115,7 +116,7 @@
 
         .game .additional-images img {
           display: inline-block;
-          max-width: 33%;
+          max-width: calc(25% - 5px);
           width: 100px;
           margin-right: 5px;
         }
@@ -123,11 +124,19 @@
 
       @media screen and (max-width: 768px) {
         body {
-          padding: 30px 20px;
+          padding: 30px 15px;
         }
 
         .game h2 {
           font-size: 35px;
+        }
+
+        .game .button {
+          width: 100%;
+        }
+
+        .game .button.github {
+          margin-top: 10px;
         }
       }
     </style>
