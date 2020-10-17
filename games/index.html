@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Game Projects</title>
     <style>
       @font-face {
-        font-family: 'NineteenNinetySeven';
-        src: url(./fonts/NineteenNinetySeven.otf) format('opentype');
+        font-family: "NineteenNinetySeven";
+        src: url(./fonts/NineteenNinetySeven.otf) format("opentype");
       }
 
       @font-face {
-        font-family: 'PixelEmulator';
-        src: url(./fonts/PixelEmulator.otf) format('opentype');
+        font-family: "PixelEmulator";
+        src: url(./fonts/PixelEmulator.otf) format("opentype");
       }
 
       @font-face {
-        font-family: 'EXEPixelPerfect';
-        src: url(./fonts/EXEPixelPerfect.ttf) format('truetype');
+        font-family: "EXEPixelPerfect";
+        src: url(./fonts/EXEPixelPerfect.ttf) format("truetype");
       }
 
       body {
-        font-family: 'Arial', sans-serif;
+        font-family: "Arial", sans-serif;
         background: #222;
         padding: 20px 40px;
         color: #fff;
@@ -36,7 +39,7 @@
       }
 
       .game h2 {
-        font-family: 'PixelEmulator', sans-serif;
+        font-family: "PixelEmulator", sans-serif;
         font-size: 50px;
         letter-spacing: 2px;
         margin-bottom: 5px;
@@ -57,6 +60,10 @@
 
       .game .additional-images {
         font-size: 0px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 600px;
       }
 
       .game .additional-images img {
@@ -64,7 +71,7 @@
         width: 150px;
         height: 80px;
         object-fit: cover;
-        margin-bottom: 5px;
+        margin: 0 5px 5px 0;
         cursor: pointer;
       }
 
@@ -87,7 +94,7 @@
         cursor: pointer;
         margin: 25px 5px 0 0;
         font-size: 32px;
-        font-family: 'EXEPixelPerfect', sans-serif;
+        font-family: "EXEPixelPerfect", sans-serif;
       }
 
       .game .button:hover {
@@ -108,6 +115,10 @@
           flex-direction: column;
         }
 
+        .game .images .additional-images {
+          flex-direction: row;
+        }
+
         .game img.main-game-image {
           max-width: 100%;
           height: auto;
@@ -116,8 +127,8 @@
 
         .game .additional-images img {
           display: inline-block;
-          max-width: calc(25% - 5px);
           width: 100px;
+          height: 60px;
           margin-right: 5px;
         }
       }
@@ -141,98 +152,167 @@
       }
     </style>
   </head>
-  
+
   <body>
-    Here are some of my recent game experiments.
-    Contact me at <a href='mailto:tomduggan85@gmail.com'>tomduggan85@gmail.com</a>
-    <div class='game'>
-      <h2>Vominate</h2>
-      <div class='images'>
-        <img class='main-game-image' src='images/vominate6.png' />
-        <div class='additional-images'>
-          <img src='images/vominate6.png' />
-          <img src='images/vominate2.gif' />
-          <img src='images/vominate3.png' />
-          <img src='images/vominate1.gif' />
-          <img src='images/vominate4.png' />
-          <img src='images/vominate5.png' />
-          <img src='images/vominate7.png' />
+    Here are some of my recent game experiments. Contact me at
+    <a href="mailto:tomduggan85@gmail.com">tomduggan85@gmail.com</a>
+    <div class="game">
+      <h2>Darken</h2>
+      <div class="images">
+        <img class="main-game-image" src="images/darken1.gif" />
+        <div class="additional-images">
+          <img src="images/darken1_thumb.gif" />
+          <img src="images/darken2_thumb.png" />
+          <img src="images/darken3_thumb.gif" />
+          <img src="images/darken4_thumb.png" />
+          <img src="images/darken5_thumb.gif" />
+          <img src="images/darken6_thumb.png" />
+          <img src="images/darken7_thumb.png" />
+          <img src="images/darken8_thumb.png" />
+          <img src="images/darken9_thumb.png" />
+          <img src="images/darken10_thumb.png" />
+          <img src="images/darken11_thumb.png" />
+          <img src="images/darken12_thumb.png" />
+          <img src="images/darken13_thumb.png" />
+          <img src="images/darken14_thumb.png" />
+          <img src="images/darken15_thumb.png" />
         </div>
       </div>
-      <div class='caption'>Javascript, Three.js, React, Mobx (2019)</div>
+      <div class="caption">Javascript, Three.js (2020)</div>
       <p>
-        DOOM, in the browser, in a procedurally-generated infinite level.
-        <br/>
-        <a class='button play' target='_blank' href='https://adoring-minsky-ddb179.netlify.com/'>Play</a>
-        <a class='button github' target='_blank' href='https://github.com/tomduggan85/fps-engine'>Github</a>
+        Zero-gravity 3D FPS with a 90's aesthetic.
+        <br /><br />
+        In development
       </p>
     </div>
-    <div class='game'>
+    <div class="game">
       <h2>Rumble in the Midwest</h2>
-      <div class='images'>
-        <img class='main-game-image' src='images/rumble17.png' />
-        <div class='additional-images'>
-          <img src='images/rumble6.gif' />
-          <img src='images/rumble7.gif' />
-          <img src='images/rumble8.gif' />
-          <img src='images/rumble14.png' />
-          <img src='images/rumble17.png' />
-          <img src='images/rumble15.png' />
-          <img src='images/rumble9.png' />
+      <div class="images">
+        <img class="main-game-image" src="images/rumble17.png" />
+        <div class="additional-images">
+          <img src="images/rumble6_thumb.gif" />
+          <img src="images/rumble7_thumb.gif" />
+          <img src="images/rumble16_thumb.png" />
+          <img src="images/rumble14_thumb.png" />
+          <img src="images/rumble17_thumb.png" />
+          <img src="images/rumble15_thumb.png" />
+          <img src="images/rumble9_thumb.png" />
         </div>
       </div>
-      <div class='caption'>Unity (2020)</div>
+      <div class="caption">Unity (2020)</div>
       <p>
         An isometric, retro-ish, demolition derby.
-        <br/><br/>
-        <a class='button play' target='_blank' href='https://pepperinmyteeth.itch.io/rumble-in-the-midwest'>More info</a>
+        <br /><br />
+        <a
+          class="button play"
+          target="_blank"
+          href="https://pepperinmyteeth.itch.io/rumble-in-the-midwest"
+          >Play on itch.io</a
+        >
       </p>
     </div>
-    <div class='game'>
-      <h2>TMNT</h2>
-      <div class='images'>
-        <img class='main-game-image' src='images/tmnt3.png' />
-        <div class='additional-images'>
-          <img src='images/tmnt3.png' />
-          <img src='images/tmnt2.png' />
-          <img src='images/tmnt1.gif' />
+    <div class="game">
+      <h2>Vominate</h2>
+      <div class="images">
+        <img class="main-game-image" src="images/vominate6.png" />
+        <div class="additional-images">
+          <img src="images/vominate6_thumb.png" />
+          <img src="images/vominate2_thumb.gif" />
+          <img src="images/vominate3_thumb.png" />
+          <img src="images/vominate1_thumb.gif" />
+          <img src="images/vominate4_thumb.png" />
+          <img src="images/vominate5_thumb.png" />
+          <img src="images/vominate7_thumb.png" />
         </div>
       </div>
-      <div class='caption'>Javascript, React, Mobx (2019)</div>
+      <div class="caption">Javascript, Three.js, React (2019)</div>
+      <p>
+        DOOM, in the browser, in a procedurally-generated infinite level.
+        <br />
+        <a
+          class="button play"
+          target="_blank"
+          href="https://adoring-minsky-ddb179.netlify.com/"
+          >Play</a
+        >
+        <a
+          class="button github"
+          target="_blank"
+          href="https://github.com/tomduggan85/fps-engine"
+          >Github</a
+        >
+      </p>
+    </div>
+    <div class="game">
+      <h2>TMNT</h2>
+      <div class="images">
+        <img class="main-game-image" src="images/tmnt3.png" />
+        <div class="additional-images">
+          <img src="images/tmnt3_thumb.png" />
+          <img src="images/tmnt2_thumb.png" />
+          <img src="images/tmnt1_thumb.gif" />
+        </div>
+      </div>
+      <div class="caption">Javascript, React, Mobx (2019)</div>
       <p>
         The first level of the NES Turtles II game in the browser.
-        <br/>
-        <a class='button play' href='https://eager-kalam-f1e3b0.netlify.com/'>Play</a>
-        <a class='button github' target='_blank' href='https://github.com/tomduggan85/side-scroller'>Github</a>
+        <br />
+        <a
+          class="button play"
+          target="_blank"
+          href="https://eager-kalam-f1e3b0.netlify.com/"
+          >Play</a
+        >
+        <a
+          class="button github"
+          target="_blank"
+          href="https://github.com/tomduggan85/side-scroller"
+          >Github</a
+        >
       </p>
     </div>
-    <div class='game'>
+    <div class="game">
       <h2>American Demolition 64</h2>
-      <div class='images'>
-        <img class='main-game-image' src='images/ad641.png' />
-        <div class='additional-images'>
-          <img src='images/ad641.png' />
-          <img src='images/ad643.png' />
-          <img src='images/ad642.png' />
-          <img src='images/ad644.png' />
-          <img src='images/ad645.png' />
+      <div class="images">
+        <img class="main-game-image" src="images/ad641.png" />
+        <div class="additional-images">
+          <img src="images/ad641_thumb.png" />
+          <img src="images/ad643_thumb.png" />
+          <img src="images/ad642_thumb.png" />
+          <img src="images/ad644_thumb.png" />
+          <img src="images/ad645_thumb.png" />
         </div>
       </div>
-      <div class='caption'>Javascript, Three.js, React, Redux (2019)</div>
+      <div class="caption">Javascript, Three.js, React, Redux (2019)</div>
       <p>
-        Unfinished two-player demolition derby in the browser with deformable cars.
-        <br/>
-        <a class='button play' href='https://mystifying-hamilton-7db1bd.netlify.com/'>Play</a>
-        <a class='button github' target='_blank' href='https://github.com/tomduggan85/drive'>Github</a>
+        Two-player demolition derby experiment in the browser with deformable
+        cars.
+        <br />
+        <a
+          class="button play"
+          href="https://mystifying-hamilton-7db1bd.netlify.com/"
+          target="_blank"
+          >Play</a
+        >
+        <a
+          class="button github"
+          target="_blank"
+          href="https://github.com/tomduggan85/drive"
+          >Github</a
+        >
       </p>
-    </div>    
+    </div>
   </body>
-  <script type='text/javascript'>
-    document.querySelectorAll('.additional-images img').forEach( function( imageEl ) {
-      var associatedMainImage = imageEl.closest('.game').querySelector('.main-game-image');
-      imageEl.addEventListener('click', function() {
-        associatedMainImage.src = imageEl.src;
-      })
-    })
+  <script type="text/javascript">
+    document
+      .querySelectorAll(".additional-images img")
+      .forEach(function (imageEl) {
+        var associatedMainImage = imageEl
+          .closest(".game")
+          .querySelector(".main-game-image");
+        imageEl.addEventListener("click", function () {
+          associatedMainImage.src = imageEl.src.replace("_thumb", "");
+        });
+      });
   </script>
 </html>
