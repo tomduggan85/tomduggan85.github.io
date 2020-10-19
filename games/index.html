@@ -22,6 +22,28 @@
         src: url(./fonts/EXEPixelPerfect.ttf) format("truetype");
       }
 
+      @keyframes spinner-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @-webkit-keyframes spinner-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @-moz-keyframes spinner-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @-o-keyframes spinner-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes NAME-YOUR-ANIMATION {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
       body {
         font-family: "Arial", sans-serif;
         background: #222;
@@ -50,12 +72,41 @@
         width: 100%;
       }
 
-      .game img.main-game-image {
+      .game .main-game-image {
         width: 900px;
         height: 600px;
-        object-fit: contain;
         background: #000;
         margin-right: 10px;
+        position: relative;
+      }
+
+      .game .main-game-image .spinner {
+        width: 50px;
+        height: 50px;
+        background-color: #ffffff;
+        opacity: 0.8;
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+        animation: spinner-spin 3s linear infinite;
+
+      }
+
+      .game .main-game-image.loading img {
+        visibility: hidden;
+      }
+
+      .game .main-game-image.loading .spinner {
+        display: block;
+      }
+
+      .game .main-game-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       .game .additional-images {
@@ -119,7 +170,7 @@
           flex-direction: row;
         }
 
-        .game img.main-game-image {
+        .game .main-game-image {
           max-width: 100%;
           height: auto;
           margin-bottom: 8px;
@@ -159,7 +210,10 @@
     <div class="game">
       <h2>Darken</h2>
       <div class="images">
-        <img class="main-game-image" src="images/darken1.gif" />
+        <div class="main-game-image">
+          <img src="images/darken1.gif" />
+          <div class="spinner"></div>
+        </div>
         <div class="additional-images">
           <img src="images/darken1_thumb.gif" />
           <img src="images/darken2_thumb.png" />
@@ -188,7 +242,10 @@
     <div class="game">
       <h2>Rumble in the Midwest</h2>
       <div class="images">
-        <img class="main-game-image" src="images/rumble17.png" />
+        <div class="main-game-image">
+          <img src="images/rumble17.png" />
+          <div class="spinner"></div>
+        </div>
         <div class="additional-images">
           <img src="images/rumble6_thumb.gif" />
           <img src="images/rumble7_thumb.gif" />
@@ -214,7 +271,10 @@
     <div class="game">
       <h2>Vominate</h2>
       <div class="images">
-        <img class="main-game-image" src="images/vominate6.png" />
+        <div class="main-game-image">
+          <img src="images/vominate6.png" />
+          <div class="spinner"></div>
+        </div>
         <div class="additional-images">
           <img src="images/vominate6_thumb.png" />
           <img src="images/vominate2_thumb.gif" />
@@ -246,7 +306,10 @@
     <div class="game">
       <h2>TMNT</h2>
       <div class="images">
-        <img class="main-game-image" src="images/tmnt3.png" />
+        <div class="main-game-image">
+          <img src="images/tmnt3.png" />
+          <div class="spinner"></div>
+        </div>
         <div class="additional-images">
           <img src="images/tmnt3_thumb.png" />
           <img src="images/tmnt2_thumb.png" />
@@ -274,7 +337,10 @@
     <div class="game">
       <h2>American Demolition 64</h2>
       <div class="images">
-        <img class="main-game-image" src="images/ad641.png" />
+        <div class="main-game-image">
+          <img src="images/ad641.png" />
+          <div class="spinner"></div>
+        </div>
         <div class="additional-images">
           <img src="images/ad641_thumb.png" />
           <img src="images/ad643_thumb.png" />
@@ -311,7 +377,11 @@
           .closest(".game")
           .querySelector(".main-game-image");
         imageEl.addEventListener("click", function () {
-          associatedMainImage.src = imageEl.src.replace("_thumb", "");
+          var mainImageTag = associatedMainImage.querySelector("img");
+          associatedMainImage.classList.add("loading");
+          mainImageTag.onload = function() { associatedMainImage.classList.remove('loading') }
+          mainImageTag.onerror = function() { associatedMainImage.classList.remove('loading') }
+          mainImageTag.src = imageEl.src.replace("_thumb", "");
         });
       });
   </script>
